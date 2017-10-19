@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- include our dependency on angular -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="avatar.js"></script>
+<link rel="stylesheet" type="text/css" href="avatar.css">
+  <meta charset="utf-8">
+  <title>User Avatar Template</title>
+</head>
+<body>
+  <!--
+    1. ng-app='app' tells angular that everything within this div should function within
+    the scope of a declared angular module with the name of app.
+    2. ng-controller='mainCtrl' tells angular that the scope of this div should be handled
+    by a controller by the name of 'mainCtrl'. In a bigger application you will likely have
+    multiple controllers within one ng-app
+  -->
+  <div class="container">
+  <div ng-app='app' ng-controller='mainCtrl'> <!-- [1],[2] -->
+    <h1>Create new user</h1>
+    
+    <!--
+     1. Giving a form a name in Angular is kind of like creationg a javascript object with that name:
+     e.g. var userForm = {}
+     2. This is the function with the given parameter we want it to be called with when the form is submitted
+     'addNew' should be found on the scope of mainCtrl.
+     3. .name & .url of userForm is like adding properties to our userForm object. Angular will automatically
+     bind values to these.
+     e.g. userForm = {
+      name: '',
+      url: ''
+     }
+    -->
+	<div class="form-group">
+    <form name='userForm' ng-submit='addNew(userForm)'> <!-- [1], [2] -->
+      <div class="form-group">
+	  <label for="email">Name:</label>
+      <input type="text" class ="form-control" id="nameInput" placeholder='Enter Name' ng-model='userForm.name'/> <!-- [3] -->
+	  </div>
+	  <div class="form-group">
+	  <label for="email">Avatar URL:</label>
+      <input type="url" class ="form-control" id="imageInput" placeholder='Enter Image Url' ng-model='userForm.url'/>
+	  </div>
+	  <div class="form-group">
+	  <label for="email">Email:</label>
+	  <input type="email" class ="form-control" id="emailInput" placeholder='Enter Email' ng-model='userForm.email'/>
+	  </div>
+      
+      <!-- 
+      setting button to type submit will trigger the ng-submit of the 
+      form that button is a child of.
+      -->
+      <button type='submit' class="btn btn-default">Add New</button>
+    </form>
+	</div>
+<!--
+ We've clearly gone mad and have replaced the div, img, and h4 tags with what
+ appears to be a mythical `avatar` tag.
+ Note we have a property of user, passing a value of user. This will be the user object
+ from the ng-repeat
+-->
+<ul class='User-list'>
+  <li ng-repeat='user in users'>
+    <avatar user='user' />
+  </li>
+</ul>
+</div>
+</div>
+</body>
+</html>
