@@ -3,23 +3,22 @@ angular.module('app', [])
 
 function mainCtrl ($scope) {
 
-$scope.items = [];
-
-$scope.add = function () {
-  $scope.items.push({});
-};
 
   $scope.users = [];
 
   $scope.addNew = function (user) {
     $scope.users.push({ 
-      name: user.name,
-      avatarUrl: user.url,
-	  email: user.email
+      rent: user.rent,
+      food: user.food,
+	  gas: user.gas,
+	  misc: user.misc
+	  
     }); /* [1] */
     
     user.name = ''; /* [2] */
     user.url = '';
 	user.email = '';
   };
+  
+  $scope.moneyLeft = 
 }
