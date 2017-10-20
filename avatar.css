@@ -16,7 +16,6 @@ h1 {
 .table {
   text-align: center;
   justify-content: center;
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
