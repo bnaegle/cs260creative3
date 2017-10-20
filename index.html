@@ -2,107 +2,74 @@
 <html>
 
 <head>
-<<<<<<< HEAD
-  <!-- include our dependency on angular -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="avatar.js"></script>
   <link rel="stylesheet" type="text/css" href="avatar.css">
-=======
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="avatar.js"></script>
-<link rel="stylesheet" type="text/css" href="avatar.css">
->>>>>>> 210eb83083c56d2b0c6bab5119dd7302b79a8270
   <meta charset="utf-8">
   <title>Budget Calculator</title>
 </head>
 
 <body>
   <div class="container">
-<<<<<<< HEAD
     <div ng-app='app' ng-controller='mainCtrl'>
       <h1>Calculate Your Monthly Budget!</h1>
       <div class="form-group">
         <form name='userForm' ng-submit='addNew(userForm)'>
-          <div class="form-group">
-            <label>Income:</label>
-            <input type="text" class="form-control" id="incomeInput" placeholder='Enter Income Amount'  ng-model='userForm.income' />
+          <strong>Projected Monthly Income: </strong>
+          </br>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-usd"></i>
+            </span>
+            <input type="number" step=".01" class="form-control" id="incomeInput" placeholder='Enter Income Amount' ng-model='userForm.income'/>
           </div>
-          <div class="form-group">
-            <label>Projected Monthly Expenses:</label>
-            <input type="number" step=".01" class="form-control" id="rentInput" placeholder='Enter Rent Amount'    ng-model='userForm.rent' />
-            <input type="number" step=".01" class="form-control" id="foodInput" placeholder='Enter Food Amount'    ng-model='userForm.food' />
-            <input type="number" step=".01" class="form-control" id="gasInput"  placeholder='Enter Gas Amount'     ng-model='userForm.gas'  />
-            <input type="number" step=".01" class="form-control" id="miscInput" placeholder='Enter Extra Expenses' ng-model='userForm.misc' />
+          <strong>Projected Monthly Expenses: </strong>
+          </br>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-usd"></i>
+            </span>
+            <input type="number" step=".01" class="form-control" id="rentInput" placeholder='Enter Rent Amount' ng-model='userForm.rent'
+            />
           </div>
-          <button type='submit' class="btn btn-default">Calculate</button>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-usd"></i>
+            </span>
+            <input type="number" step=".01" class="form-control" id="foodInput" placeholder='Enter Food Amount' ng-model='userForm.food'/>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-usd"></i>
+            </span>
+            <input type="number" step=".01" class="form-control" id="gasInput" placeholder='Enter Gas Amount' ng-model='userForm.gas'/>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-usd"></i>
+            </span>
+            <input type="number" step=".01" class="form-control" id="miscInput" placeholder='Enter Extra Expenses' ng-model='userForm.misc'/>
+          </div>
+          <div class="input-group">
+            <button type='submit' step=".01" class="btn btn-default">Calculate!</button>
+          </div>
         </form>
       </div>
-
-      <table style="width:100%">
+      <table style='width:100%' id='table'>
         <tr>
           <th>Income</th>
-          <th>Expenses</th> 
+          <th>Expenses</th>
           <th>Difference</th>
         </tr>
         <tr>
-          <td>${{users.income}}</td>
-          <td>${{users.expenses}}</td> 
-          <td>${{users.income - users.expenses}}</td>
+          <th>${{users.income}}</th>
+          <th>${{users.expenses}}</th>
+          <th>${{users.income - users.expenses}}</th>
         </tr>
       </table>
-=======
-  <div ng-app='app' ng-controller='mainCtrl'> <!-- [1],[2] -->
-    <h1>Calculate Your Monthly Budget!</h1>
-	<div class="form-group">
-    <form name='userForm' ng-submit='addNew(userForm)'>
-	<strong>Income: </strong></br>
-      <div class="input-group">
-	  <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-      <input type="number" step=".01" class ="form-control" id="incomeInput" placeholder='Enter Income Amount' ng-model='userForm.income'/> <!-- [3] -->
-	  </div>
-	  		<strong>Expenses: </strong></br>
-	  <div class="input-group">
-	  <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-      <input type="number" step=".01" class ="form-control" id="rentInput" placeholder='Enter Rent Amount' ng-model='userForm.rent'/>
-	  </div>
-	  <div class="input-group">
-	  <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-	  <input type="number" step=".01" class ="form-control" id="foodInput" placeholder='Enter Food Amount' ng-model='userForm.food'/>
-	  </div>
-	  <div class="input-group">
-	  <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-	  <input type="number" step=".01" class ="form-control" id="gasInput" placeholder='Enter Gas Amount' ng-model='userForm.gas'/>
-	  </div>
-	  <div class="input-group">
-	  <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
-	  <input type="number" step=".01" class ="form-control" id="miscInput" placeholder='Enter Extra Expenses' ng-model='userForm.misc'/>
-	  </div>
-	  <div class="input-group">
-	  <button type='submit' step=".01" class="btn btn-default">Calculate!</button>
-	  </div>
-	  </form>
-    </div>
-	<table style='width:100%'>
-	<tr>
-		<th>Income</th>
-		<th>Expenses</th>
-		<th>Difference</th>
-	</tr>
-		<tr>
-		<th>${{users.income}}</th>
-		<th>${{users.rent + users.food + users.gas + users.misc}}</th>
-		<th>${{moneyLeft}}</th>
-	</tr>
-	</table>
-	
->>>>>>> 210eb83083c56d2b0c6bab5119dd7302b79a8270
-
     </div>
   </div>
 </body>
