@@ -2,23 +2,22 @@ angular.module('app', [])
   .controller('mainCtrl', mainCtrl);
 
 function mainCtrl ($scope) {
-
-
-  $scope.users = [];
-
+  $scope.users = {};
   $scope.addNew = function (user) {
-    $scope.users.push({ 
+    $scope.users = { 
+      income: user.income,
       rent: user.rent,
       food: user.food,
-	  gas: user.gas,
-	  misc: user.misc
-	  
-    }); /* [1] */
+	    gas: user.gas,
+      misc: user.misc,
+      expenses: user.rent + user.food + user.gas + user.misc
+    };
+    console.log(users);
     
-    user.name = ''; /* [2] */
-    user.url = '';
-	user.email = '';
+    user.income = '';
+    user.rent = '';
+    user.food = '';
+    user.gas = '';
+    user.misc = '';
   };
-  
-  $scope.moneyLeft = 
 }
