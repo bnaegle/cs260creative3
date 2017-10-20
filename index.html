@@ -16,23 +16,20 @@
   <div ng-app='app' ng-controller='mainCtrl'> <!-- [1],[2] -->
     <h1>Calculate Your Monthly Budget!</h1>
 	<div class="form-group">
-    <form name='userForm' ng-submit='addInput()'>
+    <form name='userForm' ng-submit='addNew()'>
       <div class="form-group">
 	  <label for="email">Income:</label>
       <input type="text" class ="form-control" id="incomeInput" placeholder='Enter Income Amount' ng-model='userForm.name'/> <!-- [3] -->
 	  </div>
 	  <div class="form-group">
 	  <label for="email">Expenses:</label>
-      <input type="number" class ="form-control" id="expenseInput" placeholder='Enter Rent Amount' ng-model='userForm.url'/>
-	  <input type="number" class ="form-control" id="expenseInput" placeholder='Enter Food Amount' ng-model='userForm.url'/>
-	  <input type="number" class ="form-control" id="expenseInput" placeholder='Enter Gas Amount' ng-model='userForm.url'/>
+      <input type="number" class ="form-control" id="rentInput" placeholder='Enter Rent Amount' ng-model='userForm.rent'/>
+	  <input type="number" class ="form-control" id="foodInput" placeholder='Enter Food Amount' ng-model='userForm.food'/>
+	  <input type="number" class ="form-control" id="gasInput" placeholder='Enter Gas Amount' ng-model='userForm.gas'/>
+	  <input type="number" class ="form-control" id="miscInput" placeholder='Enter Extra Expenses' ng-model='userForm.misc'/>
 	  </div>
 	  </form>
-    <div ng-controller="mainCtrl">
-      <div ng-repeat="item in items">
-		<input type="number" class ="form-control" id="expenseInput" placeholder='Enter Expenses' ng-model='userForm.url'/>
-      </div>
-      <button ng-click='add()' class="btn btn-default">Add New Expense</button>
+      <button type='submit' class="btn btn-default">Add New Expense</button>
     </div>
 
 
