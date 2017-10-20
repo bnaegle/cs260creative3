@@ -5,38 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-angular.module('app', [])
-  .controller('mainCtrl', mainCtrl);
-
-function mainCtrl ($scope) {
-
-	$scope.moneyLeft = 0;
-  $scope.users = {};
-	//$scope.rent = 10;
-
-  $scope.addNew = function (user) {
-
-    $scope.users={ 
-      rent: user.rent,
-      food: user.food,
-	  gas: user.gas,
-	  misc: user.misc, 
-	  income: user.income
-    };
-	console.log($scope.users);
-	//user.rent = '';
-
-	$scope.moneyLeft = user.income - (user.rent + user.food + user.gas + user.misc); /* [1] */
-    
-    //user.name = ''; /* [2] */
-    //user.url = '';
-	//user.email = '';
-  };
- 
-}
-
-</script>
+<script src="avatar.js"></script>
 <link rel="stylesheet" type="text/css" href="avatar.css">
   <meta charset="utf-8">
   <title>Budget Calculator</title>
